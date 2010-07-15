@@ -24,7 +24,6 @@ namespace ExpirePDFPublisher
             foreach (string s in ListBox_Files.Items)
             {
                 BuildFile(s);
-
             }
 
         }
