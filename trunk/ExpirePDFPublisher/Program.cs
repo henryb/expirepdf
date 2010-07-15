@@ -9,6 +9,7 @@ namespace ExpirePDFPublisher
     {
         /// <summary>
         /// The main entry point for the application.
+	/// This program is terrible, Monkeys could have done better
         /// </summary>
         [STAThread]
         static void Main()
