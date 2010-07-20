@@ -61,7 +61,7 @@ namespace ExpirePDFPublisher
 
             newDoc.AppendChild(rootNode);
 
-            newDoc.Save(filename.Substring(0, filename.Length - 4) + ".xml");
+            newDoc.Save(filename.Substring(0, filename.Length - 4) + ".epdf");
 
 
         }
@@ -81,7 +81,27 @@ namespace ExpirePDFPublisher
             
             foreach (string file in files)
             {
-                
+                if (file.Substring(0, file.Length - 4).ToLower() == ".pdf")
+                {
+                    ListBox_Files.Items.Add(file);
+                }
+            }
+
+        }
+
+        private void Button_Open_Click(object sender, EventArgs e)
+        {
+            
+            OpenFileDialog_PDF.ShowDialog();
+        }
+
+        private void OpenFileDialog_PDF_FileOk(object sender, CancelEventArgs e)
+        {
+            string[] files = OpenFileDialog_PDF.FileNames;
+
+            foreach (string file in files)
+            {
+
                 ListBox_Files.Items.Add(file);
             }
 
