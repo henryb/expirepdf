@@ -38,6 +38,8 @@
             this.DateTimePicker_ReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.DateTimePicker_ExpirationDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.Button_Open = new System.Windows.Forms.Button();
+            this.OpenFileDialog_PDF = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,9 +47,9 @@
             // 
             this.ListBox_Files.AllowDrop = true;
             this.ListBox_Files.FormattingEnabled = true;
-            this.ListBox_Files.Location = new System.Drawing.Point(10, 27);
+            this.ListBox_Files.Location = new System.Drawing.Point(10, 105);
             this.ListBox_Files.Name = "ListBox_Files";
-            this.ListBox_Files.Size = new System.Drawing.Size(513, 264);
+            this.ListBox_Files.Size = new System.Drawing.Size(513, 186);
             this.ListBox_Files.TabIndex = 0;
             this.ListBox_Files.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListBox_Files_DragDrop);
             this.ListBox_Files.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListBox_Files_DragEnter);
@@ -84,7 +86,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
@@ -125,12 +127,29 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Expiration Date:";
             // 
+            // Button_Open
+            // 
+            this.Button_Open.Location = new System.Drawing.Point(10, 27);
+            this.Button_Open.Name = "Button_Open";
+            this.Button_Open.Size = new System.Drawing.Size(75, 75);
+            this.Button_Open.TabIndex = 7;
+            this.Button_Open.Text = "Open";
+            this.Button_Open.UseVisualStyleBackColor = true;
+            this.Button_Open.Click += new System.EventHandler(this.Button_Open_Click);
+            // 
+            // OpenFileDialog_PDF
+            // 
+            this.OpenFileDialog_PDF.Filter = "PDF files|*.pdf";
+            this.OpenFileDialog_PDF.Multiselect = true;
+            this.OpenFileDialog_PDF.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog_PDF_FileOk);
+            // 
             // Publisher
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 384);
+            this.Controls.Add(this.Button_Open);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DateTimePicker_ExpirationDate);
             this.Controls.Add(this.DateTimePicker_ReleaseDate);
@@ -160,6 +179,8 @@
         private System.Windows.Forms.DateTimePicker DateTimePicker_ReleaseDate;
         private System.Windows.Forms.DateTimePicker DateTimePicker_ExpirationDate;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Button_Open;
+        private System.Windows.Forms.OpenFileDialog OpenFileDialog_PDF;
     }
 }
 
