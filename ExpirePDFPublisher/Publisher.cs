@@ -74,6 +74,11 @@ namespace ExpirePDFPublisher
             }
         }
 
+        /// <summary>
+        /// Adds all files with filenames ending with .pdf to the files list
+        /// </summary>
+        /// <param name="sender">The source of the drag drop event</param>
+        /// <param name="e">The arguments for the drag drop event</param>
         private void ListBox_Files_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
@@ -81,7 +86,8 @@ namespace ExpirePDFPublisher
             
             foreach (string file in files)
             {
-                if (file.Substring(0, file.Length - 4).ToLower() == ".pdf")
+
+                if (file.Substring(file.Length - 4, 4).ToLower() == ".pdf")
                 {
                     ListBox_Files.Items.Add(file);
                 }
@@ -91,7 +97,7 @@ namespace ExpirePDFPublisher
 
         private void Button_Open_Click(object sender, EventArgs e)
         {
-            
+           
             OpenFileDialog_PDF.ShowDialog();
         }
 
