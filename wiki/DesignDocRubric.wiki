@@ -20,7 +20,7 @@ natural language introduction explaining the scope of the design document well
   * detailed object model included
     * appropriate to solve the requirements specified
 
-  * functional decomposition included to solve the requirements specified (If an object model is included, this may be unnecessary)
+  * functional decomposition included to solve the requirements specified (*If an object model is included, this may be unnecessary*)
     * appropriate to solve the requirements specified
 
   * data model or data storage specification included
