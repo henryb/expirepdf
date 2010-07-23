@@ -12,21 +12,21 @@ clear and concise glossary included which defined all terms used in the document
 natural language introduction explaining the scope of the design document well
 
 
-high level contextual/ architecture diagram included
-	appropriate to solve the requirements
+* high level contextual/ architecture diagram included
+	** appropriate to solve the requirements
 
-detailed object model included
-	appropriate to solve the requirements specified
+* detailed object model included
+	** appropriate to solve the requirements specified
 
-functional decomposition included to solve the requirements specified
+* functional decomposition included to solve the requirements specified
 	(If an object model is included, this may be unnecessary)
-	appropriate to solve the requirements specified
+	** appropriate to solve the requirements specified
 
-data model or data storage specification included
+* data model or data storage specification included
 
-complex algorithms explained
+* complex algorithms explained
 
-detailed architectural diagram showing system modules included
-	appropriate to the problem
+* detailed architectural diagram showing system modules included
+	** appropriate to the problem
 
-design elements traceable back to the requirements document
+* design elements traceable back to the requirements document
