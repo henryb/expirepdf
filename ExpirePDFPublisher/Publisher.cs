@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml;
+using Org.BouncyCastle.Bcpg;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 
 // Main form
 namespace ExpirePDFPublisher
@@ -37,6 +39,62 @@ namespace ExpirePDFPublisher
             fs.Read(filebytes, 0, Convert.ToInt32(fs.Length));
             return Convert.ToBase64String(filebytes, Base64FormattingOptions.InsertLineBreaks);
         }
+
+        private void PGPEncryptFile(string filename)
+        {
+
+
+
+
+        }
+
+        /*
+
+        private static void EncryptFile(
+        Stream outputStream,
+        string fileName,
+        char[] passPhrase,
+        bool armor,
+        bool withIntegrityCheck)
+        {
+            if (armor)
+            {
+                outputStream = new ArmoredOutputStream(outputStream);
+            }
+
+            MemoryStream bOut = new MemoryStream();
+
+
+            
+            PgpCompressedDataGenerator comData = new PgpCompressedDataGenerator(
+                CompressionAlgorithmTag.Zip);
+
+            PgpUtilities.WriteFileToLiteralData(
+                comData.Open(bOut),
+                PgpLiteralData.Binary,
+                new FileInfo(fileName));
+
+            comData.Close();
+
+            byte[] bytes = bOut.ToArray();
+
+            PgpEncryptedDataGenerator cPk = new PgpEncryptedDataGenerator(
+                SymmetricKeyAlgorithmTag.Cast5, withIntegrityCheck, new SecureRandom());
+
+            cPk.AddMethod(passPhrase);
+
+            Stream cOut = cPk.Open(outputStream, bytes.Length);
+
+            cOut.Write(bytes, 0, bytes.Length);
+
+            cOut.Close();
+
+            if (armor)
+            {
+                outputStream.Close();
+            }
+        }
+        */
 
         private void BuildFile(string filename)
         {
@@ -110,6 +168,11 @@ namespace ExpirePDFPublisher
 
                 ListBox_Files.Items.Add(file);
             }
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
 
         }
     }
