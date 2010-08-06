@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml;
+using Org.BouncyCastle;
 using Org.BouncyCastle.Bcpg;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 
@@ -40,62 +41,6 @@ namespace ExpirePDFPublisher
             return Convert.ToBase64String(filebytes, Base64FormattingOptions.InsertLineBreaks);
         }
 
-        private void PGPEncryptFile(string filename)
-        {
-
-
-
-
-        }
-
-        /*
-
-        private static void EncryptFile(
-        Stream outputStream,
-        string fileName,
-        char[] passPhrase,
-        bool armor,
-        bool withIntegrityCheck)
-        {
-            if (armor)
-            {
-                outputStream = new ArmoredOutputStream(outputStream);
-            }
-
-            MemoryStream bOut = new MemoryStream();
-
-
-            
-            PgpCompressedDataGenerator comData = new PgpCompressedDataGenerator(
-                CompressionAlgorithmTag.Zip);
-
-            PgpUtilities.WriteFileToLiteralData(
-                comData.Open(bOut),
-                PgpLiteralData.Binary,
-                new FileInfo(fileName));
-
-            comData.Close();
-
-            byte[] bytes = bOut.ToArray();
-
-            PgpEncryptedDataGenerator cPk = new PgpEncryptedDataGenerator(
-                SymmetricKeyAlgorithmTag.Cast5, withIntegrityCheck, new SecureRandom());
-
-            cPk.AddMethod(passPhrase);
-
-            Stream cOut = cPk.Open(outputStream, bytes.Length);
-
-            cOut.Write(bytes, 0, bytes.Length);
-
-            cOut.Close();
-
-            if (armor)
-            {
-                outputStream.Close();
-            }
-        }
-        */
-
         private void BuildFile(string filename)
         {
 
@@ -105,6 +50,8 @@ namespace ExpirePDFPublisher
 
             XmlElement fileNode = newDoc.CreateElement("File");
             fileNode.InnerText = Base64EncodeFile(filename);
+            String fileNod= Base64EncodeFile(filename);
+            
 
             XmlElement releasedateNode = newDoc.CreateElement("ReleaseDate");
             releasedateNode.InnerText = DateTimePicker_ReleaseDate.Value.ToString();
@@ -118,7 +65,7 @@ namespace ExpirePDFPublisher
             rootNode.AppendChild(fileNode);
 
             newDoc.AppendChild(rootNode);
-
+            //Encrypt(original, passArray, "iway", SymmetricKeyAlgorithmTag.Cast5, true);
             newDoc.Save(filename.Substring(0, filename.Length - 4) + ".epdf");
 
 
