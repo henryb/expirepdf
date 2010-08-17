@@ -68,8 +68,8 @@ namespace ExpirePDFPublisher
             rootNode.AppendChild(fileNode);
 
             newDoc.AppendChild(rootNode);
-            newDoc.Save(filename.Substring(0, filename.Length - 4) + ".epdf");
-            String argument = "-e" + filename.Substring(0, filename.Length - 4) + ".epdf" + " C:\\keys\\viewpub.txt";
+            newDoc.Save(filename.Substring(0, filename.Length - 4) + ".cpdf");
+            String argument = "-e" + filename.Substring(0, filename.Length - 4) + ".cpdf" + " C:\\keys\\viewpub.txt";
 
             EncryptIt(argument.Split(" ".ToCharArray()));
 
@@ -415,7 +415,7 @@ namespace ExpirePDFPublisher
                 else
                 {
                     keyIn = File.OpenRead(args[2]);
-                    fos = File.Create(args[1]);
+                    fos = File.Create(args[1]+".epdf");
                     EncryptFile(fos, args[1], ReadPublicKey(keyIn), false, false);
                 }
 				keyIn.Close();
