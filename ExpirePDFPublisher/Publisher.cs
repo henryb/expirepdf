@@ -511,8 +511,11 @@ namespace ExpirePDFPublisher
 
         private void Button_RemoveImage_Click(object sender, EventArgs e)
         {
-            PictureBox_Image.BackgroundImage.Dispose();
-            PictureBox_Image.BackgroundImage = null;
+            if (PictureBox_Image.BackgroundImage != null)
+            {
+                PictureBox_Image.BackgroundImage.Dispose();
+                PictureBox_Image.BackgroundImage = null;
+            }
         }
 
         private void OpenFileDialog_PNG_FileOk(object sender, CancelEventArgs e)
