@@ -70,7 +70,7 @@ namespace ExpirePDFPublisherUnitTests
         [TestMethod()]
         public void DecryptAndVerifyTest()
         {
-            PgpEncryptionKeys encryptionKeys = null; // TODO: Initialize to an appropriate value
+            PgpEncryptionKeys encryptionKeys = new PgpEncryptionKeys("..\\..\\..\\Misc\\keys\\viewpub.txt", "..\\..\\..\\Misc\\keys\\viewpriv.txt",""); // TODO: Initialize to an appropriate value
             PgpDecrypt target = new PgpDecrypt(encryptionKeys); // TODO: Initialize to an appropriate value
             Stream inputStream = null; // TODO: Initialize to an appropriate value
             string outputFile = string.Empty; // TODO: Initialize to an appropriate value

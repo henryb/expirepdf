@@ -91,12 +91,12 @@ namespace ExpirePDFPublisherUnitTests
         public void Base64EncodeFileTest()
         {
             Publisher_Accessor target = new Publisher_Accessor(); // TODO: Initialize to an appropriate value
-            string filename = string.Empty; // TODO: Initialize to an appropriate value
-            string expected = string.Empty; // TODO: Initialize to an appropriate value
+            string filename = "..\\..\\..\\Misc\\lorem ipsum.txt"; // TODO: Initialize to an appropriate value
+            string expected = "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4="; // TODO: Initialize to an appropriate value
             string actual;
             actual = target.Base64EncodeFile(filename);
             Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            //Assert.Inconclusive("Verify the correctness of this test method.");
         }
 
         /// <summary>
@@ -107,12 +107,17 @@ namespace ExpirePDFPublisherUnitTests
         public void Base64EncodeImageTest()
         {
             Publisher_Accessor target = new Publisher_Accessor(); // TODO: Initialize to an appropriate value
-            Image theImage = null; // TODO: Initialize to an appropriate value
-            string expected = string.Empty; // TODO: Initialize to an appropriate value
+            Image theImage = Image.FromFile("..\\..\\..\\Misc\\icon_happy.png"); // TODO: Initialize to an appropriate value
+            string expected =
+                @"iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAACpQTFRF
+/1dR//+T///P/+AA/yQe//5f8I4A/6cA//wL/78A/8QA/+YAAAYA////qrHGBgAAABl0RVh0U29m
+dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABwSURBVChTZZBbDoAgDARB5dFS739dd7foj5OQ
+sAPWlnKLINqVjEdtzaUoEOdca3mHgYjaGLehQA5ELA/ciIrzLawHBD94xZDIAsQksgKJFL7UFlEN
+mQKuMP0Fws88Z2fq1N3I2ylnGaB/s/ynzSdIHqWwCs0fhH7eAAAAAElFTkSuQmCC";
             string actual;
             actual = target.Base64EncodeImage(theImage);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            Assert.AreEqual(expected, actual, false);
+            //Assert.Inconclusive("Verify the correctness of this test method.");
         }
 
         /// <summary>
@@ -137,7 +142,7 @@ namespace ExpirePDFPublisherUnitTests
         {
             Stream outputStream = null; // TODO: Initialize to an appropriate value
             string fileName = string.Empty; // TODO: Initialize to an appropriate value
-            PgpPublicKey encKey = null; // TODO: Initialize to an appropriate value
+            PgpPublicKey encKey = Publisher.ReadPublicKey("..\\..\\..\\Misc\\keys\\pubpub.txt"); // TODO: Initialize to an appropriate value
             bool armor = false; // TODO: Initialize to an appropriate value
             bool withIntegrityCheck = false; // TODO: Initialize to an appropriate value
             Publisher_Accessor.EncryptFile(outputStream, fileName, encKey, armor, withIntegrityCheck);
