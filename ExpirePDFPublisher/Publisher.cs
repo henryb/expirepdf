@@ -28,9 +28,25 @@ namespace ExpirePDFPublisher
 
         private void Button_Publish_Click(object sender, EventArgs e)
         {
-            foreach (string s in ListBox_Files.Items)
+            try
             {
-                BuildFile(s);
+                foreach (string s in ListBox_Files.Items)
+                {
+                    BuildFile(s);
+                }
+            }
+            catch (Exception t)
+            {
+                MessageBox.Show("Error in publishing:" + t.Message.ToString());
+            }
+
+            if (ListBox_Files.Items.Count > 0)
+            {
+                MessageBox.Show(ListBox_Files.Items.Count + " file(s) successfully published.");
+            }
+            else
+            {
+                MessageBox.Show("Please add some files to publish.");
             }
 
         }
@@ -44,6 +60,16 @@ namespace ExpirePDFPublisher
             return Convert.ToBase64String(filebytes, Base64FormattingOptions.InsertLineBreaks);
         }
 
+
+
+        private string Base64EncodeImage(Image theImage)
+        {
+            MemoryStream ms = new MemoryStream();
+            theImage.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+
+            return Convert.ToBase64String(ms.ToArray(), Base64FormattingOptions.InsertLineBreaks);
+        }
+
         private void BuildFile(string filename)
         {
 
@@ -53,26 +79,55 @@ namespace ExpirePDFPublisher
 
             XmlElement fileNode = newDoc.CreateElement("File");
             fileNode.InnerText = Base64EncodeFile(filename);
-            String fileNod = Base64EncodeFile(filename);
+            //String fileNod = Base64EncodeFile(filename);
 
 
-            XmlElement releasedateNode = newDoc.CreateElement("ReleaseDate");
-            releasedateNode.InnerText = DateTimePicker_ReleaseDate.Value.ToString();
+            XmlElement availabilitydateNode = newDoc.CreateElement("AvailabilityDate");
+            availabilitydateNode.InnerText = DateTimePicker_AvailabilityDate.Value.ToString();
 
             XmlElement expirationdateNode = newDoc.CreateElement("ExpirationDate");
             expirationdateNode.InnerText = DateTimePicker_ExpirationDate.Value.ToString();
 
 
-            rootNode.AppendChild(releasedateNode);
+            XmlElement passwordNode = newDoc.CreateElement("Password");
+            passwordNode.InnerText = TextBox_Password.Text.Trim();
+
+            XmlElement messageNode = newDoc.CreateElement("Message");
+            messageNode.InnerText = TextBox_Message.Text.Trim();
+
+            XmlElement websiteNode = newDoc.CreateElement("Website");
+            websiteNode.InnerText = TextBox_Website.Text.Trim();
+
+            XmlElement imageNode = newDoc.CreateElement("Image");
+            if (PictureBox_Image.BackgroundImage != null)
+            {
+                imageNode.InnerText = Base64EncodeImage(PictureBox_Image.BackgroundImage);
+            }
+            else {
+                imageNode.InnerText = string.Empty;
+            }
+
+            rootNode.AppendChild(passwordNode);
+            rootNode.AppendChild(messageNode);
+            rootNode.AppendChild(websiteNode);
+            rootNode.AppendChild(imageNode);
+            rootNode.AppendChild(availabilitydateNode);
             rootNode.AppendChild(expirationdateNode);
             rootNode.AppendChild(fileNode);
 
             newDoc.AppendChild(rootNode);
-            newDoc.Save(filename.Substring(0, filename.Length - 4) + ".cpdf");
-            String argument = "-e" + filename.Substring(0, filename.Length - 4) + ".cpdf" + " C:\\keys\\viewpub.txt";
+            newDoc.Save(filename.Substring(0, filename.Length - 4) + ".epdf");
+            /*
+            String argument = "-e " + filename.Substring(0, filename.Length - 4) + ".cpdf" + " keys\\viewpub.txt";
 
             EncryptIt(argument.Split(" ".ToCharArray()));
 
+
+            String argument2 = "-d " + filename.Substring(0, filename.Length - 4) + ".epdf" + " keys\\viewpriv.txt 123123123";
+
+            EncryptIt(argument2.Split(" ".ToCharArray()));
+            
+            */
 
         }
      /*   private void EncryptIt(string filename)
@@ -141,9 +196,7 @@ namespace ExpirePDFPublisher
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-        }
+       
     
 
 
@@ -415,7 +468,8 @@ namespace ExpirePDFPublisher
                 else
                 {
                     keyIn = File.OpenRead(args[2]);
-                    fos = File.Create(args[1]+".epdf");
+                    fos = File.Create(args[1].Substring(0, args[1].Length - 5) + ".epdf");
+                    //System.Diagnostics.Debug.WriteLine("Outputting to: " + args[1] + ".epdf");
                     EncryptFile(fos, args[1], ReadPublicKey(keyIn), false, false);
                 }
 				keyIn.Close();
@@ -425,7 +479,8 @@ namespace ExpirePDFPublisher
             {
                 Stream fin = File.OpenRead(args[1]);
                 Stream keyIn = File.OpenRead(args[2]);
-				DecryptFile(fin, keyIn, args[3].ToCharArray(), new FileInfo(args[1]).Name + ".out");
+				//DecryptFile(fin, keyIn, args[3].ToCharArray(), new FileInfo(args[1]).Name + ".out");
+                DecryptFile(fin, keyIn, "".ToCharArray(), new FileInfo(args[1]).Name + ".out");
 				fin.Close();
 				keyIn.Close();
             }
@@ -434,6 +489,34 @@ namespace ExpirePDFPublisher
                 Console.Error.WriteLine("usage: KeyBasedFileProcessor -d|-e [-a|ai] file [secretKeyFile passPhrase|pubKeyFile]");
             }
         }
+
+        private void Button_AddFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog_PDF.ShowDialog();
+        }
+
+        private void Button_RemoveFile_Click(object sender, EventArgs e)
+        {
+            ListBox_Files.Items.RemoveAt(ListBox_Files.SelectedIndex);
+        }
+
+        private void Button_AddImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog_PNG.ShowDialog();        
+        }
+
+        private void Button_RemoveImage_Click(object sender, EventArgs e)
+        {
+            PictureBox_Image.BackgroundImage.Dispose();
+            PictureBox_Image.BackgroundImage = null;
+        }
+
+        private void OpenFileDialog_PNG_FileOk(object sender, CancelEventArgs e)
+        {
+            PictureBox_Image.BackgroundImage = Image.FromFile(OpenFileDialog_PNG.FileName);
+        }
+
+       
     }
 
 
