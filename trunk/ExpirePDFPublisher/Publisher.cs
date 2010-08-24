@@ -497,7 +497,11 @@ namespace ExpirePDFPublisher
 
         private void Button_RemoveFile_Click(object sender, EventArgs e)
         {
-            ListBox_Files.Items.RemoveAt(ListBox_Files.SelectedIndex);
+
+            if (ListBox_Files.SelectedIndex > -1 && ListBox_Files.SelectedIndex < ListBox_Files.Items.Count)
+            {
+                ListBox_Files.Items.RemoveAt(ListBox_Files.SelectedIndex);
+            }
         }
 
         private void Button_AddImage_Click(object sender, EventArgs e)
