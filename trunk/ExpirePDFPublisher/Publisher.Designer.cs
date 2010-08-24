@@ -28,61 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Publisher));
             this.ListBox_Files = new System.Windows.Forms.ListBox();
             this.Button_Publish = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DateTimePicker_ReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.DateTimePicker_ExpirationDate = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Button_Open = new System.Windows.Forms.Button();
             this.OpenFileDialog_PDF = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.ListBox_UsersComputers = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TabControl_License = new System.Windows.Forms.TabControl();
+            this.TabPage_Basic = new System.Windows.Forms.TabPage();
+            this.TextBox_Password = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.DateTimePicker_AvailabilityDate = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.ListBox_Dates = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.TabPage_Advanced = new System.Windows.Forms.TabPage();
+            this.Button_RemoveImage = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.PictureBox_Image = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.Button_AddImage = new System.Windows.Forms.Button();
+            this.TextBox_Website = new System.Windows.Forms.TextBox();
+            this.TextBox_Message = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.Button_AddFile = new System.Windows.Forms.Button();
+            this.Button_RemoveFile = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.OpenFileDialog_PNG = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.TabControl_License.SuspendLayout();
+            this.TabPage_Basic.SuspendLayout();
+            this.TabPage_Advanced.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // ListBox_Files
             // 
             this.ListBox_Files.AllowDrop = true;
             this.ListBox_Files.FormattingEnabled = true;
-            this.ListBox_Files.Location = new System.Drawing.Point(10, 105);
+            this.ListBox_Files.Location = new System.Drawing.Point(4, 635);
             this.ListBox_Files.Name = "ListBox_Files";
-            this.ListBox_Files.Size = new System.Drawing.Size(513, 186);
+            this.ListBox_Files.Size = new System.Drawing.Size(802, 186);
             this.ListBox_Files.TabIndex = 0;
             this.ListBox_Files.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListBox_Files_DragDrop);
             this.ListBox_Files.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListBox_Files_DragEnter);
             // 
             // Button_Publish
             // 
-            this.Button_Publish.Location = new System.Drawing.Point(424, 34);
+            this.Button_Publish.Location = new System.Drawing.Point(731, 558);
             this.Button_Publish.Name = "Button_Publish";
-            this.Button_Publish.Size = new System.Drawing.Size(75, 75);
+            this.Button_Publish.Size = new System.Drawing.Size(75, 72);
             this.Button_Publish.TabIndex = 1;
             this.Button_Publish.Text = "Publish";
             this.Button_Publish.UseVisualStyleBackColor = true;
@@ -95,7 +107,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(533, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(810, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -119,47 +131,12 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Release Date:";
-            // 
-            // DateTimePicker_ReleaseDate
-            // 
-            this.DateTimePicker_ReleaseDate.Location = new System.Drawing.Point(168, 34);
-            this.DateTimePicker_ReleaseDate.Name = "DateTimePicker_ReleaseDate";
-            this.DateTimePicker_ReleaseDate.Size = new System.Drawing.Size(200, 20);
-            this.DateTimePicker_ReleaseDate.TabIndex = 4;
-            // 
             // DateTimePicker_ExpirationDate
             // 
-            this.DateTimePicker_ExpirationDate.Location = new System.Drawing.Point(168, 59);
+            this.DateTimePicker_ExpirationDate.Location = new System.Drawing.Point(588, 72);
             this.DateTimePicker_ExpirationDate.Name = "DateTimePicker_ExpirationDate";
             this.DateTimePicker_ExpirationDate.Size = new System.Drawing.Size(200, 20);
             this.DateTimePicker_ExpirationDate.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Expiration Date:";
-            // 
-            // Button_Open
-            // 
-            this.Button_Open.Location = new System.Drawing.Point(10, 27);
-            this.Button_Open.Name = "Button_Open";
-            this.Button_Open.Size = new System.Drawing.Size(75, 72);
-            this.Button_Open.TabIndex = 7;
-            this.Button_Open.Text = "Open";
-            this.Button_Open.UseVisualStyleBackColor = true;
-            this.Button_Open.Click += new System.EventHandler(this.Button_Open_Click);
             // 
             // OpenFileDialog_PDF
             // 
@@ -167,232 +144,432 @@
             this.OpenFileDialog_PDF.Multiselect = true;
             this.OpenFileDialog_PDF.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog_PDF_FileOk);
             // 
-            // button1
+            // TabControl_License
             // 
-            this.button1.Location = new System.Drawing.Point(91, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 72);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.TabControl_License.Controls.Add(this.TabPage_Basic);
+            this.TabControl_License.Controls.Add(this.TabPage_Advanced);
+            this.TabControl_License.Location = new System.Drawing.Point(4, 156);
+            this.TabControl_License.Name = "TabControl_License";
+            this.TabControl_License.SelectedIndex = 0;
+            this.TabControl_License.Size = new System.Drawing.Size(802, 330);
+            this.TabControl_License.TabIndex = 10;
             // 
-            // button2
+            // TabPage_Basic
             // 
-            this.button2.Location = new System.Drawing.Point(172, 27);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 72);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Remove";
-            this.button2.UseVisualStyleBackColor = true;
+            this.TabPage_Basic.Controls.Add(this.TextBox_Password);
+            this.TabPage_Basic.Controls.Add(this.label2);
+            this.TabPage_Basic.Controls.Add(this.label12);
+            this.TabPage_Basic.Controls.Add(this.DateTimePicker_AvailabilityDate);
+            this.TabPage_Basic.Controls.Add(this.label11);
+            this.TabPage_Basic.Controls.Add(this.label1);
+            this.TabPage_Basic.Controls.Add(this.DateTimePicker_ExpirationDate);
+            this.TabPage_Basic.Controls.Add(this.label14);
+            this.TabPage_Basic.Controls.Add(this.label15);
+            this.TabPage_Basic.Controls.Add(this.label5);
+            this.TabPage_Basic.Location = new System.Drawing.Point(4, 22);
+            this.TabPage_Basic.Name = "TabPage_Basic";
+            this.TabPage_Basic.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPage_Basic.Size = new System.Drawing.Size(794, 304);
+            this.TabPage_Basic.TabIndex = 0;
+            this.TabPage_Basic.Text = "Basic";
+            this.TabPage_Basic.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // TextBox_Password
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 297);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(533, 378);
-            this.tabControl1.TabIndex = 10;
+            this.TextBox_Password.Location = new System.Drawing.Point(352, 121);
+            this.TextBox_Password.Name = "TextBox_Password";
+            this.TextBox_Password.Size = new System.Drawing.Size(436, 20);
+            this.TextBox_Password.TabIndex = 31;
             // 
-            // tabPage1
+            // label2
             // 
-            this.tabPage1.Controls.Add(this.Button_Publish);
-            this.tabPage1.Controls.Add(this.DateTimePicker_ExpirationDate);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.DateTimePicker_ReleaseDate);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(525, 352);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Simple";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.label2.BackColor = System.Drawing.Color.DarkGray;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(2, 118);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(789, 23);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Please enter a password for additional protection:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tabPage2
+            // label12
             // 
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Controls.Add(this.ListBox_UsersComputers);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.ListBox_Dates);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.dateTimePicker1);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.dateTimePicker2);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(525, 352);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Advanced";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.label12.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(2, 95);
+            this.label12.Margin = new System.Windows.Forms.Padding(0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(789, 23);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "Password Protection";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // DateTimePicker_AvailabilityDate
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 225);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(258, 20);
-            this.textBox2.TabIndex = 21;
+            this.DateTimePicker_AvailabilityDate.Location = new System.Drawing.Point(590, 26);
+            this.DateTimePicker_AvailabilityDate.Name = "DateTimePicker_AvailabilityDate";
+            this.DateTimePicker_AvailabilityDate.Size = new System.Drawing.Size(200, 20);
+            this.DateTimePicker_AvailabilityDate.TabIndex = 29;
             // 
-            // button7
+            // label11
             // 
-            this.button7.Location = new System.Drawing.Point(392, 280);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "Remove";
-            this.button7.UseVisualStyleBackColor = true;
+            this.label11.BackColor = System.Drawing.Color.DarkGray;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(2, 26);
+            this.label11.Margin = new System.Windows.Forms.Padding(0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(789, 23);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Please select the date that you wish this content to be made available:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // label1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 226);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "User / Computer:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(2, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(789, 23);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Availability Date:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button6
+            // label14
             // 
-            this.button6.Location = new System.Drawing.Point(392, 251);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "Add";
-            this.button6.UseVisualStyleBackColor = true;
+            this.label14.BackColor = System.Drawing.Color.DarkGray;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(2, 72);
+            this.label14.Margin = new System.Windows.Forms.Padding(0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(789, 23);
+            this.label14.TabIndex = 36;
+            this.label14.Text = "Please select the date that you wish this content to expire:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ListBox_UsersComputers
+            // label15
             // 
-            this.ListBox_UsersComputers.FormattingEnabled = true;
-            this.ListBox_UsersComputers.Location = new System.Drawing.Point(23, 251);
-            this.ListBox_UsersComputers.Name = "ListBox_UsersComputers";
-            this.ListBox_UsersComputers.Size = new System.Drawing.Size(363, 95);
-            this.ListBox_UsersComputers.TabIndex = 17;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(87, 185);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(296, 20);
-            this.textBox1.TabIndex = 16;
+            this.label15.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(2, 49);
+            this.label15.Margin = new System.Windows.Forms.Padding(0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(789, 23);
+            this.label15.TabIndex = 35;
+            this.label15.Text = "Expiration Date:";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 185);
+            this.label5.BackColor = System.Drawing.Color.DarkGray;
+            this.label5.Location = new System.Drawing.Point(2, 141);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Password:";
+            this.label5.Size = new System.Drawing.Size(789, 160);
+            this.label5.TabIndex = 39;
             // 
-            // button5
+            // TabPage_Advanced
             // 
-            this.button5.Location = new System.Drawing.Point(392, 116);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 23);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Remove Date";
-            this.button5.UseVisualStyleBackColor = true;
+            this.TabPage_Advanced.Controls.Add(this.Button_RemoveImage);
+            this.TabPage_Advanced.Controls.Add(this.label17);
+            this.TabPage_Advanced.Controls.Add(this.PictureBox_Image);
+            this.TabPage_Advanced.Controls.Add(this.label4);
+            this.TabPage_Advanced.Controls.Add(this.label18);
+            this.TabPage_Advanced.Controls.Add(this.Button_AddImage);
+            this.TabPage_Advanced.Controls.Add(this.TextBox_Website);
+            this.TabPage_Advanced.Controls.Add(this.TextBox_Message);
+            this.TabPage_Advanced.Controls.Add(this.label13);
+            this.TabPage_Advanced.Controls.Add(this.label16);
+            this.TabPage_Advanced.Controls.Add(this.label3);
+            this.TabPage_Advanced.Controls.Add(this.label19);
+            this.TabPage_Advanced.Controls.Add(this.label20);
+            this.TabPage_Advanced.Location = new System.Drawing.Point(4, 22);
+            this.TabPage_Advanced.Name = "TabPage_Advanced";
+            this.TabPage_Advanced.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPage_Advanced.Size = new System.Drawing.Size(794, 304);
+            this.TabPage_Advanced.TabIndex = 1;
+            this.TabPage_Advanced.Text = "Advanced";
+            this.TabPage_Advanced.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // Button_RemoveImage
             // 
-            this.button4.Location = new System.Drawing.Point(389, 87);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Add Date";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Button_RemoveImage.Location = new System.Drawing.Point(87, 209);
+            this.Button_RemoveImage.Name = "Button_RemoveImage";
+            this.Button_RemoveImage.Size = new System.Drawing.Size(75, 72);
+            this.Button_RemoveImage.TabIndex = 42;
+            this.Button_RemoveImage.Text = "Remove";
+            this.Button_RemoveImage.UseVisualStyleBackColor = true;
+            this.Button_RemoveImage.Click += new System.EventHandler(this.Button_RemoveImage_Click);
             // 
-            // ListBox_Dates
+            // label17
             // 
-            this.ListBox_Dates.FormattingEnabled = true;
-            this.ListBox_Dates.Location = new System.Drawing.Point(20, 87);
-            this.ListBox_Dates.Name = "ListBox_Dates";
-            this.ListBox_Dates.Size = new System.Drawing.Size(363, 95);
-            this.ListBox_Dates.TabIndex = 12;
+            this.label17.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(2, 117);
+            this.label17.Margin = new System.Windows.Forms.Padding(0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(789, 23);
+            this.label17.TabIndex = 35;
+            this.label17.Text = "Website:";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button3
+            // PictureBox_Image
             // 
-            this.button3.Location = new System.Drawing.Point(442, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 75);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Publish";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(186, 31);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Release Date:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(186, 6);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 9;
+            this.PictureBox_Image.BackColor = System.Drawing.Color.DarkGray;
+            this.PictureBox_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PictureBox_Image.Location = new System.Drawing.Point(582, 189);
+            this.PictureBox_Image.Name = "PictureBox_Image";
+            this.PictureBox_Image.Size = new System.Drawing.Size(206, 109);
+            this.PictureBox_Image.TabIndex = 7;
+            this.PictureBox_Image.TabStop = false;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 31);
+            this.label4.BackColor = System.Drawing.Color.DarkGray;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(2, 186);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Expiration Date:";
+            this.label4.Size = new System.Drawing.Size(789, 23);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Please select an image to display when this content is opened:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(2, 163);
+            this.label18.Margin = new System.Windows.Forms.Padding(0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(789, 23);
+            this.label18.TabIndex = 37;
+            this.label18.Text = "Image:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Button_AddImage
+            // 
+            this.Button_AddImage.Location = new System.Drawing.Point(6, 209);
+            this.Button_AddImage.Name = "Button_AddImage";
+            this.Button_AddImage.Size = new System.Drawing.Size(75, 72);
+            this.Button_AddImage.TabIndex = 4;
+            this.Button_AddImage.Text = "Add";
+            this.Button_AddImage.UseVisualStyleBackColor = true;
+            this.Button_AddImage.Click += new System.EventHandler(this.Button_AddImage_Click);
+            // 
+            // TextBox_Website
+            // 
+            this.TextBox_Website.Location = new System.Drawing.Point(438, 140);
+            this.TextBox_Website.Name = "TextBox_Website";
+            this.TextBox_Website.Size = new System.Drawing.Size(350, 20);
+            this.TextBox_Website.TabIndex = 3;
+            // 
+            // TextBox_Message
+            // 
+            this.TextBox_Message.Location = new System.Drawing.Point(438, 26);
+            this.TextBox_Message.Multiline = true;
+            this.TextBox_Message.Name = "TextBox_Message";
+            this.TextBox_Message.Size = new System.Drawing.Size(350, 88);
+            this.TextBox_Message.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.DarkGray;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(2, 26);
+            this.label13.Margin = new System.Windows.Forms.Padding(0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(789, 23);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Please enter a message to display when this content is opened:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(2, 3);
+            this.label16.Margin = new System.Windows.Forms.Padding(0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(789, 23);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Message:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.DarkGray;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(2, 140);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(789, 23);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Please enter a website to display when this content is opened:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.Color.DarkGray;
+            this.label19.Location = new System.Drawing.Point(3, 209);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(788, 92);
+            this.label19.TabIndex = 40;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.DarkGray;
+            this.label20.Location = new System.Drawing.Point(2, 49);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(789, 68);
+            this.label20.TabIndex = 41;
+            // 
+            // Button_AddFile
+            // 
+            this.Button_AddFile.Location = new System.Drawing.Point(4, 558);
+            this.Button_AddFile.Name = "Button_AddFile";
+            this.Button_AddFile.Size = new System.Drawing.Size(75, 71);
+            this.Button_AddFile.TabIndex = 12;
+            this.Button_AddFile.Text = "Add";
+            this.Button_AddFile.UseVisualStyleBackColor = true;
+            this.Button_AddFile.Click += new System.EventHandler(this.Button_AddFile_Click);
+            // 
+            // Button_RemoveFile
+            // 
+            this.Button_RemoveFile.Location = new System.Drawing.Point(85, 558);
+            this.Button_RemoveFile.Name = "Button_RemoveFile";
+            this.Button_RemoveFile.Size = new System.Drawing.Size(75, 72);
+            this.Button_RemoveFile.TabIndex = 13;
+            this.Button_RemoveFile.Text = "Remove";
+            this.Button_RemoveFile.UseVisualStyleBackColor = true;
+            this.Button_RemoveFile.Click += new System.EventHandler(this.Button_RemoveFile_Click);
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(0, 87);
+            this.label8.Margin = new System.Windows.Forms.Padding(0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(810, 43);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "License:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.DarkGray;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(0, 130);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(810, 23);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Please enter the license you wish to use below:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(0, 24);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(810, 63);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "ExpirePDF Publisher";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(379, 44);
+            this.label7.BackColor = System.Drawing.Color.DarkGray;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(0, 532);
+            this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "label7";
+            this.label7.Size = new System.Drawing.Size(810, 23);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Please select the files you wish to publish below.";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(0, 489);
+            this.label10.Margin = new System.Windows.Forms.Padding(0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(810, 43);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Files:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(750, 24);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            // 
+            // OpenFileDialog_PNG
+            // 
+            this.OpenFileDialog_PNG.Filter = "PNG files|*.png";
+            this.OpenFileDialog_PNG.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog_PNG_FileOk);
             // 
             // Publisher
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 664);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(810, 833);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Button_Open);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.Button_RemoveFile);
+            this.Controls.Add(this.Button_AddFile);
+            this.Controls.Add(this.TabControl_License);
+            this.Controls.Add(this.Button_Publish);
             this.Controls.Add(this.ListBox_Files);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Publisher";
             this.Text = "ExpirePDF Publisher";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.TabControl_License.ResumeLayout(false);
+            this.TabPage_Basic.ResumeLayout(false);
+            this.TabPage_Basic.PerformLayout();
+            this.TabPage_Advanced.ResumeLayout(false);
+            this.TabPage_Advanced.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,33 +583,42 @@
         private System.Windows.Forms.ToolStripMenuItem fToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker DateTimePicker_ReleaseDate;
         private System.Windows.Forms.DateTimePicker DateTimePicker_ExpirationDate;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Button_Open;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog_PDF;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ListBox ListBox_Dates;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox ListBox_UsersComputers;
+        private System.Windows.Forms.TabControl TabControl_License;
+        private System.Windows.Forms.TabPage TabPage_Basic;
+        private System.Windows.Forms.TabPage TabPage_Advanced;
+        private System.Windows.Forms.TextBox TextBox_Password;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker DateTimePicker_AvailabilityDate;
+        private System.Windows.Forms.Button Button_AddImage;
+        private System.Windows.Forms.TextBox TextBox_Website;
+        private System.Windows.Forms.TextBox TextBox_Message;
+        private System.Windows.Forms.Button Button_AddFile;
+        private System.Windows.Forms.Button Button_RemoveFile;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox PictureBox_Image;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button Button_RemoveImage;
+        private System.Windows.Forms.OpenFileDialog OpenFileDialog_PNG;
     }
 }
 
