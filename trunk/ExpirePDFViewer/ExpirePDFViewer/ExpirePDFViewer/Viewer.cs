@@ -165,14 +165,11 @@ This method has the added benefit of cleaning up after itself if a user runs the
 
             if (expirationDate.Ticks < DateTime.Now.Ticks)
             {
-                MessageBox.Show("PDF has expired.");
                 killit = true;
             }
 
             if (availabilityDate.Ticks > DateTime.Now.Ticks)
             {
-                MessageBox.Show("PDF is not available yet.");
-               
                 killit = true;
             }
 
