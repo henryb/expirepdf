@@ -82,22 +82,21 @@
             // ListBox_Files
             // 
             this.ListBox_Files.AllowDrop = true;
-            this.ListBox_Files.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.ListBox_Files.FormattingEnabled = true;
-            this.ListBox_Files.Location = new System.Drawing.Point(4, 635);
+            this.ListBox_Files.Location = new System.Drawing.Point(4, 561);
             this.ListBox_Files.Name = "ListBox_Files";
-            this.ListBox_Files.Size = new System.Drawing.Size(802, 186);
+            this.ListBox_Files.Size = new System.Drawing.Size(802, 95);
             this.ListBox_Files.TabIndex = 0;
             this.ListBox_Files.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListBox_Files_DragDrop);
             this.ListBox_Files.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListBox_Files_DragEnter);
             // 
             // Button_Publish
             // 
-            this.Button_Publish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Button_Publish.Location = new System.Drawing.Point(731, 558);
+            this.Button_Publish.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.Button_Publish.Location = new System.Drawing.Point(731, 662);
             this.Button_Publish.Name = "Button_Publish";
-            this.Button_Publish.Size = new System.Drawing.Size(75, 72);
+            this.Button_Publish.Size = new System.Drawing.Size(75, 30);
             this.Button_Publish.TabIndex = 1;
             this.Button_Publish.Text = "Publish";
             this.Button_Publish.UseVisualStyleBackColor = true;
@@ -316,12 +315,12 @@
             this.TabPage_Advanced.Padding = new System.Windows.Forms.Padding(3);
             this.TabPage_Advanced.Size = new System.Drawing.Size(794, 304);
             this.TabPage_Advanced.TabIndex = 1;
-            this.TabPage_Advanced.Text = "Advanced";
+            this.TabPage_Advanced.Text = "Presentation";
             this.TabPage_Advanced.UseVisualStyleBackColor = true;
             // 
             // Button_RemoveImage
             // 
-            this.Button_RemoveImage.Location = new System.Drawing.Point(87, 209);
+            this.Button_RemoveImage.Location = new System.Drawing.Point(98, 212);
             this.Button_RemoveImage.Name = "Button_RemoveImage";
             this.Button_RemoveImage.Size = new System.Drawing.Size(75, 72);
             this.Button_RemoveImage.TabIndex = 42;
@@ -387,7 +386,7 @@
             // 
             // Button_AddImage
             // 
-            this.Button_AddImage.Location = new System.Drawing.Point(6, 209);
+            this.Button_AddImage.Location = new System.Drawing.Point(17, 212);
             this.Button_AddImage.Name = "Button_AddImage";
             this.Button_AddImage.Size = new System.Drawing.Size(75, 72);
             this.Button_AddImage.TabIndex = 4;
@@ -481,9 +480,11 @@
             // 
             // Button_AddFile
             // 
-            this.Button_AddFile.Location = new System.Drawing.Point(4, 558);
+            this.Button_AddFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_AddFile.Location = new System.Drawing.Point(4, 662);
             this.Button_AddFile.Name = "Button_AddFile";
-            this.Button_AddFile.Size = new System.Drawing.Size(75, 71);
+            this.Button_AddFile.Size = new System.Drawing.Size(75, 30);
             this.Button_AddFile.TabIndex = 12;
             this.Button_AddFile.Text = "Add";
             this.Button_AddFile.UseVisualStyleBackColor = true;
@@ -491,9 +492,11 @@
             // 
             // Button_RemoveFile
             // 
-            this.Button_RemoveFile.Location = new System.Drawing.Point(85, 558);
+            this.Button_RemoveFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_RemoveFile.Location = new System.Drawing.Point(96, 662);
             this.Button_RemoveFile.Name = "Button_RemoveFile";
-            this.Button_RemoveFile.Size = new System.Drawing.Size(75, 72);
+            this.Button_RemoveFile.Size = new System.Drawing.Size(75, 30);
             this.Button_RemoveFile.TabIndex = 13;
             this.Button_RemoveFile.Text = "Remove";
             this.Button_RemoveFile.UseVisualStyleBackColor = true;
@@ -549,7 +552,7 @@
             this.label7.BackColor = System.Drawing.Color.DarkGray;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(0, 532);
+            this.label7.Location = new System.Drawing.Point(0, 535);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(810, 23);
@@ -559,15 +562,13 @@
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 489);
             this.label10.Margin = new System.Windows.Forms.Padding(0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(810, 43);
+            this.label10.Size = new System.Drawing.Size(810, 42);
             this.label10.TabIndex = 18;
             this.label10.Text = "Files:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -595,7 +596,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(810, 833);
+            this.ClientSize = new System.Drawing.Size(810, 695);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label10);
