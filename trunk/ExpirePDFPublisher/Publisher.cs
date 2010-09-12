@@ -116,13 +116,33 @@ namespace ExpirePDFPublisher
             rootNode.AppendChild(fileNode);
 
             newDoc.AppendChild(rootNode);
-            newDoc.Save(filename.Substring(0, filename.Length - 4) + ".epdf");
+
+            //MemoryStream xmlstream = new MemoryStream();
+            //StreamWriter writer = new StreamWriter(xmlstream);
+            //writer.Write(newDoc.InnerText);
+            //writer.Flush();
+
+            String xmlfile = filename.Substring(0, filename.Length - 4) + ".epdf";
+            newDoc.Save(xmlfile);
+
+            FileStream fos = File.Create(xmlfile.Substring(0, xmlfile.Length - 5) + ".tpdf");
+            //FileStream fos = File.Create(filename.Substring(0, filename.Length - 4) + ".epdf");
+
+            string executableName = Application.ExecutablePath;
+            FileInfo executableFileInfo = new FileInfo(executableName);
+            string executableDirectoryName = executableFileInfo.DirectoryName;
+            FileStream keyring = File.OpenRead(executableDirectoryName+"\\pubring.gpg");
+
+            EncryptFile(fos, xmlfile, ReadPublicKey(keyring), false, false);
+
+            fos.Close();
+            keyring.Close();
+
+            File.Delete(xmlfile);
+            File.Move(xmlfile.Substring(0, xmlfile.Length - 5) + ".tpdf", xmlfile);
+            
+
             /*
-            String argument = "-e " + filename.Substring(0, filename.Length - 4) + ".cpdf" + " keys\\viewpub.txt";
-
-            EncryptIt(argument.Split(" ".ToCharArray()));
-
-
             String argument2 = "-d " + filename.Substring(0, filename.Length - 4) + ".epdf" + " keys\\viewpriv.txt 123123123";
 
             EncryptIt(argument2.Split(" ".ToCharArray()));
