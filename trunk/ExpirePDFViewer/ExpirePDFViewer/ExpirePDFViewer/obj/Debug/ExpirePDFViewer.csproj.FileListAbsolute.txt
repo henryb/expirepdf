@@ -1,8 +1,0 @@
-C:\Users\Ryan\Documents\Visual Studio 2008\Projects\ExpirePDFViewer\ExpirePDFViewer\bin\Debug\ExpirePDFViewer.exe
-C:\Users\Ryan\Documents\Visual Studio 2008\Projects\ExpirePDFViewer\ExpirePDFViewer\bin\Debug\ExpirePDFViewer.pdb
-C:\Users\Ryan\Documents\Visual Studio 2008\Projects\ExpirePDFViewer\ExpirePDFViewer\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Ryan\Documents\Visual Studio 2008\Projects\ExpirePDFViewer\ExpirePDFViewer\obj\Debug\ExpirePDFViewer.Viewer.resources
-C:\Users\Ryan\Documents\Visual Studio 2008\Projects\ExpirePDFViewer\ExpirePDFViewer\obj\Debug\ExpirePDFViewer.Properties.Resources.resources
-C:\Users\Ryan\Documents\Visual Studio 2008\Projects\ExpirePDFViewer\ExpirePDFViewer\obj\Debug\ExpirePDFViewer.csproj.GenerateResource.Cache
-C:\Users\Ryan\Documents\Visual Studio 2008\Projects\ExpirePDFViewer\ExpirePDFViewer\obj\Debug\ExpirePDFViewer.exe
-C:\Users\Ryan\Documents\Visual Studio 2008\Projects\ExpirePDFViewer\ExpirePDFViewer\obj\Debug\ExpirePDFViewer.pdb
