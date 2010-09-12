@@ -10,6 +10,11 @@ using System.IO;
 using System.Xml;
 using System.Diagnostics;
 using System.Threading;
+using Org.BouncyCastle;
+using Org.BouncyCastle.Bcpg;
+using Org.BouncyCastle.Bcpg.OpenPgp;
+using Org.BouncyCastle.Security;
+using Org.BouncyCastle.Utilities.IO;
 
 namespace ExpirePDFViewer
 {
@@ -151,8 +156,20 @@ This method has the added benefit of cleaning up after itself if a user runs the
 
         private void ExtractFile(string filename)
         {
+            string executableName = Application.ExecutablePath;
+            FileInfo executableFileInfo = new FileInfo(executableName);
+            string executableDirectoryName = executableFileInfo.DirectoryName;
+            Stream fin = File.OpenRead(filename);
+            Stream keyIn = File.OpenRead(executableDirectoryName+"\\secring.gpg");
+            String xmlstring = DecryptFile(fin, keyIn, "".ToCharArray(), new FileInfo(filename).Name + ".out");
+            fin.Close();
+            keyIn.Close();
+
+            if (xmlstring == null)
+                Application.Exit();
+            
             XmlDocument newDoc = new XmlDocument();
-            newDoc.Load(filename);
+            newDoc.LoadXml(xmlstring);
 
             XmlElement rootNode = (XmlElement)(newDoc.SelectSingleNode("Root"));          
 
@@ -223,9 +240,157 @@ This method has the added benefit of cleaning up after itself if a user runs the
             this.Close();
         }
 
+        /**
+        * Search a secret key ring collection for a secret key corresponding to
+        * keyId if it exists.
+        *
+        * @param pgpSec a secret key ring collection.
+        * @param keyId keyId we want.
+        * @param pass passphrase to decrypt secret key with.
+        * @return
+        */
+        private static PgpPrivateKey FindSecretKey(
+            PgpSecretKeyRingBundle pgpSec,
+            long keyId,
+            char[] pass)
+        {
+            PgpSecretKey pgpSecKey = pgpSec.GetSecretKey(keyId);
 
+            if (pgpSecKey == null)
+            {
+                return null;
+            }
 
+            return pgpSecKey.ExtractPrivateKey(pass);
+        }
 
+        /**
+        * decrypt the passed in message stream
+        */
+        private static String DecryptFile(
+            Stream inputStream,
+            Stream keyIn,
+            char[] passwd,
+            string defaultFileName)
+        {
+            inputStream = PgpUtilities.GetDecoderStream(inputStream);
+
+            try
+            {
+                PgpObjectFactory pgpF = new PgpObjectFactory(inputStream);
+                PgpEncryptedDataList enc;
+
+                PgpObject o = pgpF.NextPgpObject();
+                //
+                // the first object might be a PGP marker packet.
+                //
+                if (o is PgpEncryptedDataList)
+                {
+                    enc = (PgpEncryptedDataList)o;
+                }
+                else
+                {
+                    enc = (PgpEncryptedDataList)pgpF.NextPgpObject();
+                }
+
+                //
+                // find the secret key
+                //
+                PgpPrivateKey sKey = null;
+                PgpPublicKeyEncryptedData pbe = null;
+                PgpSecretKeyRingBundle pgpSec = new PgpSecretKeyRingBundle(
+                    PgpUtilities.GetDecoderStream(keyIn));
+
+                foreach (PgpPublicKeyEncryptedData pked in enc.GetEncryptedDataObjects())
+                {
+                    sKey = FindSecretKey(pgpSec, pked.KeyId, passwd);
+
+                    if (sKey != null)
+                    {
+                        pbe = pked;
+                        break;
+                    }
+                }
+
+                if (sKey == null)
+                {
+                    throw new ArgumentException("secret key for message not found.");
+                }
+
+                Stream clear = pbe.GetDataStream(sKey);
+
+                PgpObjectFactory plainFact = new PgpObjectFactory(clear);
+
+                PgpObject message = plainFact.NextPgpObject();
+
+                if (message is PgpCompressedData)
+                {
+                    PgpCompressedData cData = (PgpCompressedData)message;
+                    PgpObjectFactory pgpFact = new PgpObjectFactory(cData.GetDataStream());
+
+                    message = pgpFact.NextPgpObject();
+                }
+
+                String decryptedstring;
+
+                if (message is PgpLiteralData)
+                {
+                    PgpLiteralData ld = (PgpLiteralData)message;
+                    Stream unc = ld.GetInputStream();
+
+                    //string outFileName = ld.FileName;
+                    //if (outFileName.Length == 0)
+                    //{
+                    //    outFileName = defaultFileName;
+                    //}
+
+                    //Stream fos = File.Create("C:\\test.epdf");
+
+                    //Streams.PipeAll(unc, fos);
+                    //fos.Close();
+                    
+                    StreamReader reader = new StreamReader(unc);
+                    decryptedstring = reader.ReadToEnd();
+                }
+                else if (message is PgpOnePassSignatureList)
+                {
+                    throw new PgpException("encrypted message contains a signed message - not literal data.");
+                }
+                else
+                {
+                    throw new PgpException("message is not a simple encrypted file - type unknown.");
+                }
+
+                if (pbe.IsIntegrityProtected())
+                {
+                    if (!pbe.Verify())
+                    {
+                        Console.Error.WriteLine("message failed integrity check");
+                    }
+                    else
+                    {
+                        Console.Error.WriteLine("message integrity check passed");
+                    }
+                }
+                else
+                {
+                    Console.Error.WriteLine("no message integrity check");
+                }
+                return decryptedstring;
+            }
+            catch (PgpException e)
+            {
+                Console.Error.WriteLine(e);
+
+                Exception underlyingException = e.InnerException;
+                if (underlyingException != null)
+                {
+                    Console.Error.WriteLine(underlyingException.Message);
+                    Console.Error.WriteLine(underlyingException.StackTrace);
+                }
+                return null;
+            }
+        }
 
     }
 }
